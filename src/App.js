@@ -8,11 +8,24 @@ function App() {
     function handleSearch() {
       const user = document.querySelector('input[type=text]').value;
       console.log(user);
-      fetch(`https://api.github.com/users/${user}/repos`).then(async (apiResponse) => {
-            const response = await apiResponse.json();
-            console.log(response);
-            setRepos(response);
-      });
+      if(user) {
+        fetch(`https://api.github.com/users/${user}/repos`).then(async (apiResponse) => {
+              console.log(apiResponse.status);
+              if(apiResponse.status === 200) {
+                const response = await apiResponse.json();
+                console.log(response);
+                setRepos(response);
+              }else if(apiResponse.status === 404) {
+                alert("User not found...");
+              } else {
+                alert("There was an error");
+              }
+        }).catch( (err) => {
+          console.log(err);
+        });
+      }else {
+        alert("Please, insert a github user");
+      }
 
     }
     

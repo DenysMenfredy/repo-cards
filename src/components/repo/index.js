@@ -5,7 +5,11 @@ import './index.css';
 import dateParse from '../../utils/dateParse';
 
 function Repo({repos}) {
-
+        if(repos.length === 0) {
+          return (
+            <h1>User doesn't have repositories...</h1>
+          )
+        }
         return repos.map( (repo) => {
             return (
               <div key={repo.id} className="repo-container"> 
