@@ -4,8 +4,8 @@ import './index.css';
 
 import dateParse from '../../utils/dateParse';
 
-function Repo({repos}) {
-        if(repos.length === 0) {
+function Repo({repos, clicked}) {
+        if(repos.length === 0 && clicked) {
           return (
             <h1>User doesn't have repositories...</h1>
           )
