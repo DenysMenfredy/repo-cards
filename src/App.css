@@ -72,3 +72,78 @@
   padding: 20px;
   align-self: center;
 }
+
+@media screen and (max-width: 720px) {
+  .app-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+    
+  }
+  .search-box {
+    padding: 10px;
+    align-self: center;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+  }
+
+  .search-box input {
+    width: 75%;
+    border: none;
+    border-bottom: 1px solid #6c757d;
+    outline: none;
+    margin-left: 10px;
+    text-align: center;
+  }
+
+  .search-box input:focus{
+    outline:none;
+  }
+
+  @keyframes changeBackground {
+    from {background-color:#16c172;}
+    to {background-color: #214f4b;}
+  }
+
+  .search-box button {
+    width: 70px;
+    height: 30px;
+    background-color: #16C172;
+    color: #ffffff;
+    border:none;
+    text-align: center;
+    text-transform: uppercase;
+    cursor:pointer;
+    margin-right: 7px;
+  }
+
+  search-box button:hover {
+    animation-name: changeBackground;
+    animation-duration: 1s;
+    background-color: #214F4B;
+    border:none;
+    outline: none;
+  }
+
+  .search-box button:active {
+    border:none;
+    outline: none;
+  }
+
+  .search-results {
+    width: 100%;
+    padding: 20px;
+    align-self: center;
+  }
+  
+}

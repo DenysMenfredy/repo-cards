@@ -17,7 +17,7 @@ function Repo({repos, clicked}) {
                 <div className="repo-info">
                     <div className="left-side">
                         <h5>Primary language: {repo.language}</h5>
-                        <h5>Starts: {repo.stargazers_count}</h5>
+                        <h5>Stars: {repo.stargazers_count}</h5>
                         <h5>Forks: {repo.forks_count}</h5>
                     </div>
                     <div className="right-side">
