@@ -1,17 +1,52 @@
 import './App.css';
 import React,  {useState} from 'react';
 
+import User from './components/user';
 import Repo from './components/repo';
 
 function App() {
     const [user, setUser] = useState('');
+    const [userName, setUserName] = useState('');
+    const [userPic, setUserPic] = useState('');
+    const [userFollowers, setUserFollowers] = useState('');
+    const [userFollowing, setUserFollowing] = useState('');
     const [repos, setRepos] = useState([]);
     const [clicked, setClicked] = useState(false);
+    const [showRepos, setShowRepos] = useState(false);
+
+
+    function getInfo() {
+        // e.preventDefault();
+        fetch(`https://api.github.com/users/${user}`).then( async (res) => {
+          console.log(res.status);
+          if (res.status === 200) {
+            const response = await res.json();
+            console.log(response);
+            setUserName(response.name);
+            setUserPic(response.avatar_url);
+            setUserFollowers(response.followers);
+            setUserFollowing(response.following);
+
+          } else if (res.status === 404) {
+            alert('User not found');
+            setUserName('');
+            setUserPic('');
+            setUserFollowers('');
+            setUserFollowing('');
+          } else {
+            alert('Something went wrong');
+          }
+          
+        } 
+        ).catch(err => console.log(err));
+    }
+
     function handleSearch() {
       
       // setUser(document.querySelector('input[type=text]').value);
       console.log(user);
       if(user) {
+        getInfo(user);
         fetch(`https://api.github.com/users/${user}/repos`).then(async (apiResponse) => {
               console.log(apiResponse.status);
               if(apiResponse.status === 200) {
@@ -21,6 +56,8 @@ function App() {
                 setClicked(true);
               }else if(apiResponse.status === 404) {
                 alert("User not found...");
+                setRepos([]);
+                setClicked(false);
               } else {
                 alert("There was an error");
               }
@@ -48,7 +85,10 @@ function App() {
           <button type="button" onClick={handleSearch}>Search</button>
         </div>
         <div className="search-results">
-          <Repo repos={repos} clicked={clicked}/>
+          {clicked && (<User userName={userName} userPic={userPic} userFollowers={userFollowers} userFollowing={userFollowing}/>)}
+          <button className="show-repos" onClick={() => setShowRepos(true)}>Show Repos</button>
+
+          {showRepos && clicked && (<Repo repos={repos}/>)}
         </div>
       </section>
     );
