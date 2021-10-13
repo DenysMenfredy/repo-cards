@@ -46,6 +46,7 @@ function App() {
       console.log(user);
       if(user) {
         getInfo(user);
+        setShowRepos(false);
         fetch(`https://api.github.com/users/${user}/repos`).then(async (apiResponse) => {
               console.log(apiResponse.status);
               if(apiResponse.status === 200) {
