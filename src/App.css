@@ -74,6 +74,27 @@
   align-self: center;
 }
 
+.show-repos-btn {
+  width: 100%;
+  height: 30px;
+  background-color: #16C172;
+  color: #ffffff;
+  border:none;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.show-repos-btn:hover {
+  animation-name: changeBackground;
+  animation-duration: 1s;
+  background-color: #214F4B;
+  border:none;
+  outline: none;
+}
+
+
 @media screen and (max-width: 720px) {
   .app-container {
     width: 100%;

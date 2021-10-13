@@ -42,7 +42,6 @@ function App() {
     }
 
     function handleSearch() {
-      
       // setUser(document.querySelector('input[type=text]').value);
       console.log(user);
       if(user) {
@@ -77,6 +76,10 @@ function App() {
         handleSearch();
       }
     }
+
+    function handleShowRepos() {
+      setShowRepos(!showRepos);
+    }
     
     return (
       <section className="app-container">
@@ -86,7 +89,7 @@ function App() {
         </div>
         <div className="search-results">
           {clicked && (<User userName={userName} userPic={userPic} userFollowers={userFollowers} userFollowing={userFollowing}/>)}
-          <button className="show-repos" onClick={() => setShowRepos(true)}>Show Repos</button>
+          {clicked && user && (<button className="show-repos-btn" onClick={handleShowRepos}>Show Repositories</button>)}
 
           {showRepos && clicked && (<Repo repos={repos}/>)}
         </div>
