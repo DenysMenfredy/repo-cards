@@ -11,7 +11,7 @@
 .repo-container {
     width: 520px;
     height: auto;
-    background: #480ca8;
+    background: #3f37c9;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -58,7 +58,7 @@
     .repo-container {
         width: 100%;
         height: auto;
-        background: #480ca8;
+        background: #3f37c9;
         display: flex;
         flex-direction: column;
         justify-content: center;

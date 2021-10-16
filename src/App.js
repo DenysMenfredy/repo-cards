@@ -84,14 +84,16 @@ function App() {
     
     return (
       <section className="app-container">
+        {/* TODO: move input to center and when click in search move to top. */}
         <div className="search-box">
           <input type="text" placeholder="type a github user..." onChange={e => setUser(e.target.value)} onKeyPress={handleEnterKeyPress}/>
           <button type="button" onClick={handleSearch}>Search</button>
         </div>
         <div className="search-results">
-          {clicked && (<User userName={userName} userPic={userPic} userFollowers={userFollowers} userFollowing={userFollowing}/>)}
+          {clicked && (<User userName={userName} userPic={userPic} userFollowers={userFollowers} userFollowing={userFollowing} numRepos={repos.length}/>)}
           {clicked && user && (<button className="show-repos-btn" onClick={handleShowRepos}>Show Repositories</button>)}
 
+          {/* TODO: show repos in a slider way. */}
           {showRepos && clicked && (<Repo repos={repos}/>)}
         </div>
       </section>
