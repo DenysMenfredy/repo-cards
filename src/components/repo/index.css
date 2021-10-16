@@ -11,7 +11,7 @@
 .repo-container {
     width: 520px;
     height: auto;
-    background: #cfdac8;
+    background: #480ca8;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,13 +31,14 @@
 .repo-container a {
     display: inline-block;
     align-self: center;
-    color: #000000;
+    color: #f8f9fa;
 }
 
 .repo-container h3 {
     display: inline-block;
     align-self: center;
     padding: 10px;
+    color: #f8f9fa;
 }
 
 .repo-info {
@@ -50,13 +51,14 @@
 
 .repo-info h5 {
     padding: 5px;
+    color: #f8f9fa;
 }
 
 @media screen and (max-width: 720px) {
     .repo-container {
         width: 100%;
         height: auto;
-        background: #cfdac8;
+        background: #480ca8;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -66,11 +68,13 @@
         display: inline-block;
         align-self: center;
         padding: 10px;
+        color: #f8f9fa;
     }
 
     .repo-container a {
         display: inline-block;
         align-self: center;
+        color: #f8f9fa;
     }
 
     .repo-info {
@@ -80,6 +84,7 @@
 
     .repo-info h5 {
         padding: 5px;
+        color: #f8f9fa;
     }
 
     
