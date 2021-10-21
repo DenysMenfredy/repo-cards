@@ -84,6 +84,7 @@ function App() {
     
     return (
       <section className="app-container">
+        {/* TODO: Create a new branch to implement new features. */}
         {/* TODO: move input to center and when click in search move to top. */}
         <div className="search-box">
           <input type="text" placeholder="type a github user..." onChange={e => setUser(e.target.value)} onKeyPress={handleEnterKeyPress}/>
@@ -94,7 +95,14 @@ function App() {
           {clicked && user && (<button className="show-repos-btn" onClick={handleShowRepos}>Show Repositories</button>)}
 
           {/* TODO: show repos in a slider way. */}
-          {showRepos && clicked && (<Repo repos={repos}/>)}
+          {showRepos && clicked && repos.length <= 0 && (<h1>No repositories found</h1>)}
+          {showRepos && clicked && repos.length > 0 && repos.map((repo) => {
+            return (
+              <div key={repo.id}>
+                <Repo repo={repo}/>
+              </div>
+            )
+          })}
         </div>
       </section>
     );

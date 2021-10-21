@@ -167,5 +167,25 @@
     padding: 20px;
     align-self: center;
   }
+
+  .show-repos-btn {
+    width: 100%;
+    height: 30px;
+    background-color: #06d6a0;
+    color: #ffffff;
+    border:none;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 15px;
+  }
+
+  .show-repos-btn:hover {
+    animation-name: changeBackground;
+    animation-duration: 1s;
+    background-color: #073b4c;
+    border:none;
+    outline: none;
+  }
   
 }
