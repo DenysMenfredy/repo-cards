@@ -25,5 +25,5 @@ For each repo, we'll get:
 - Number of forks;
 - Creation date;
 
-## Projet Deployment 🚀
+## Project Deployment 🚀
 In order to deploy the application, I used [Vercel](https://vercel.com/) with Github Actions. You can see the project live [here](https://repo-cards.vercel.app/)
