@@ -1,5 +1,12 @@
 # Repo Cards 🗃️
-This project has the goal of improve my skills in web development using [ReactJS](https://reactjs.org/) ⚛️, and also exploring API's. To do that I used the [GitHub API](https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api) to gather data about the users and show it in react components.
+This project has the goal of improve my skills in web development using [ReactJS](https://reactjs.org/) ⚛️, and also exploring API's. To do that I used the [GitHub API](https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api) to gather data about the users and show it in react components.<br>
+
+<img align="left" alt="HTML logo" src="https://img.icons8.com/color/48/000000/html-5--v1.png"/>
+<img align="left" alt="CSS3 logo" src="https://img.icons8.com/color/48/000000/css3.png"/>
+<img align="left" alt="Javascript logo" src="https://img.icons8.com/color/48/000000/javascript--v2.png" />
+<img align="left" alt="React JS logo" src="https://img.icons8.com/office/48/000000/react.png" />
+<br>
+<br>
 
 ## Project Parts
 - User Information;
